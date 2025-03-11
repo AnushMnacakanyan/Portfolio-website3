@@ -9,7 +9,7 @@ import {
   LinkedInIcon,
   PinterestIcon,
   TwitterIcon,
-} from "./icons";
+} from "./Icons";
 import { motion } from "framer-motion";
 
 interface ICustomLink {
