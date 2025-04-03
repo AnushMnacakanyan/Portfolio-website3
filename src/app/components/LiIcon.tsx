@@ -6,6 +6,7 @@ interface IProps{
 }
 
 const LiIcon = ({reference}:IProps) => {
+  
   const { scrollYProgress } = useScroll({
     target: reference,
     offset: ["center end", "center center"],
