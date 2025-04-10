@@ -1,3 +1,4 @@
+"use client"
 import Head from "next/head";
 import React from "react";
 import Layout from "../components/Layout";
@@ -5,6 +6,7 @@ import Animated from "../components/Animated";
 import Link from "next/link";
 import Image from "next/image";
 import { GithubIcon } from "../components/Icons";
+import { motion } from "framer-motion";
 // import project1 from "../public/images/projects/crypto-screener-cover-image.jpg";
 
 interface IFeatured {
@@ -24,6 +26,7 @@ interface IProject {
   github: string;
 }
 
+
 const FeaturedProject = ({
   type,
   title,
@@ -41,13 +44,21 @@ const FeaturedProject = ({
         target="_blank"
         className="w-1/2 cursor-pointer overflow-hidden rounded-lg"
       >
-        <Image
-          src={img}
-          alt={title}
-          className="w-full h-auto"
-          width={700}
-          height={400}
-        />
+        <Link href={link} target="_blank">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+            className="w-full h-auto"
+          >
+            <Image
+              src={img}
+              alt={title}
+              width={700}
+              height={400}
+              className="w-full h-auto"
+            />
+          </motion.div>
+        </Link>
       </Link>
 
       <div className="w-1/2 flex flex-col items-start justify-between pl-6">
@@ -87,13 +98,21 @@ const Project = ({ title, type, img, link, github }: IProject) => {
         target="_blank"
         className="w-full cursor-pointer overflow-hidden rounded-lg"
       >
-        <Image
-          src={img}
-          alt={title}
-          className="w-full h-auto"
-          width={700}
-          height={400}
-        />
+        <Link href={link} target="_blank">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+            className="w-full h-auto"
+          >
+            <Image
+              src={img}
+              alt={title}
+              width={700}
+              height={400}
+              className="w-full h-auto"
+            />
+          </motion.div>
+        </Link>
       </Link>
 
       <div className="w-full flex flex-col items-start justify-between mt-4">
